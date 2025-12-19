@@ -22,6 +22,7 @@ jobs:
           - host: ubuntu-latest
             target: x86_64-unknown-linux-musl
             build: npm run build -- --target x86_64-unknown-linux-musl --use-napi-cross
+            setup: sudo apt-get update && sudo apt-get install -y musl-tools
 
           - host: ubuntu-latest
             target: aarch64-unknown-linux-gnu
@@ -57,6 +58,10 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Setup (if needed)
+        if: ${{ matrix.settings.setup }}
+        run: ${{ matrix.settings.setup }}
 
       - name: Build
         run: ${{ matrix.settings.build }}
