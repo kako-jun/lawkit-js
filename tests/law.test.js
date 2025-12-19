@@ -43,7 +43,7 @@ describe('law()', () => {
 
             expect(results).toHaveLength(1);
             expect(results[0].resultType).toBe('ParetoAnalysis');
-            expect(typeof results[0].top_20PercentContribution).toBe('number');
+            expect(typeof results[0].top20PercentContribution).toBe('number');
             expect(typeof results[0].paretoRatio).toBe('number');
             expect(typeof results[0].concentrationIndex).toBe('number');
         });
