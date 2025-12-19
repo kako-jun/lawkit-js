@@ -4,7 +4,7 @@ version = "2.5.16"
 edition = "2021"
 description = "JavaScript bindings for lawkit - statistical law analysis toolkit"
 license = "MIT"
-repository = "https://github.com/kako-jun/lawkit"
+repository = "https://github.com/kako-jun/lawkit-js"
 authors = ["kako-jun"]
 
 [lib]
@@ -12,7 +12,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # Core lawkit functionality
-lawkit-core = { path = "../lawkit-core" }
+lawkit-core = "2.5"
 
 # NAPI-RS for Node.js bindings
 napi = { version = "2.2", default-features = false, features = ["napi8", "serde-json"] }
@@ -26,3 +26,6 @@ regex = "1.0"
 
 [build-dependencies]
 napi-build = "2.2"
+
+[dev-dependencies]
+cargo-husky = { version = "1", features = ["precommit-hook", "run-cargo-fmt"] }

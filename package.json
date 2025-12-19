@@ -1,7 +1,7 @@
 {
   "name": "lawkit-js",
   "version": "2.5.16",
-  "description": "A Node.js wrapper for the lawkit CLI tool - statistical law analysis toolkit for fraud detection, data quality assessment, and audit compliance.",
+  "description": "Node.js bindings for lawkit - statistical law analysis toolkit for fraud detection, data quality assessment, and audit compliance. Powered by Rust for blazing fast performance.",
   "keywords": [
     "statistics",
     "benford",
@@ -13,31 +13,31 @@
     "data-quality",
     "audit",
     "compliance",
-    "cli",
     "statistical-analysis",
-    "financial-analysis"
+    "financial-analysis",
+    "napi-rs",
+    "rust"
   ],
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "build": "napi build --platform --release",
     "build:debug": "napi build --platform",
-    "test": "npm run build && node test.js",
-    "examples": "npm run build && npx tsx examples.ts",
-    "verify": "npm run build && node -e \"console.log(require('./index.js'))\"",
-    "prepublish": "npm run build",
-    "artifacts": "napi artifacts"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "napi prepublish -t npm",
+    "artifacts": "napi artifacts",
+    "version": "napi version",
+    "prepare": "husky"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=16.0.0"
   },
   "files": [
     "index.js",
     "index.d.ts",
-    "*.node",
-    "README.md",
-    "examples.ts",
-    "test.js"
+    "*.node"
   ],
   "os": [
     "linux",
@@ -50,26 +50,50 @@
   ],
   "author": "kako-jun",
   "license": "MIT",
-  "homepage": "https://github.com/kako-jun/lawkit",
+  "homepage": "https://github.com/kako-jun/lawkit-js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kako-jun/lawkit.git",
-    "directory": "lawkit-js"
+    "url": "git+https://github.com/kako-jun/lawkit-js.git"
   },
   "bugs": {
-    "url": "https://github.com/kako-jun/lawkit/issues"
+    "url": "https://github.com/kako-jun/lawkit-js/issues"
   },
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/kako-jun"
   },
   "devDependencies": {
-    "@napi-rs/cli": "^2.18.0"
+    "@napi-rs/cli": "^3.5.0",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/tests"
+    ],
+    "testMatch": [
+      "**/*.test.js"
+    ],
+    "forceExit": true
   },
   "napi": {
-    "name": "lawkit-js",
-    "triples": {
-      "defaults": true
-    }
+    "binaryName": "lawkit-js",
+    "targets": [
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "aarch64-unknown-linux-gnu",
+      "x86_64-apple-darwin",
+      "aarch64-apple-darwin",
+      "x86_64-pc-windows-msvc"
+    ]
+  },
+  "optionalDependencies": {
+    "lawkit-js-linux-x64-gnu": "2.5.16",
+    "lawkit-js-linux-x64-musl": "2.5.16",
+    "lawkit-js-linux-arm64-gnu": "2.5.16",
+    "lawkit-js-darwin-x64": "2.5.16",
+    "lawkit-js-darwin-arm64": "2.5.16",
+    "lawkit-js-win32-x64-msvc": "2.5.16"
   }
 }
