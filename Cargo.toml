@@ -1,6 +1,6 @@
 [package]
 name = "lawkit-js"
-version = "2.5.16"
+version = "2.6.0"
 edition = "2021"
 description = "JavaScript bindings for lawkit - statistical law analysis toolkit"
 license = "MIT"
@@ -12,7 +12,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # Core lawkit functionality
-lawkit-core = "2.5"
+lawkit-core = "2.6"
 
 # NAPI-RS for Node.js bindings
 napi = { version = "2.2", default-features = false, features = ["napi8", "serde-json"] }
