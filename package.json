@@ -1,5 +1,5 @@
 {
-  "name": "lawkit-js",
+  "name": "lawkit",
   "version": "2.5.16",
   "description": "Node.js bindings for lawkit - statistical law analysis toolkit for fraud detection, data quality assessment, and audit compliance. Powered by Rust for blazing fast performance.",
   "keywords": [
