@@ -5,7 +5,7 @@ Node.js wrapper for the `lawkit` CLI tool - comprehensive statistical law analys
 ## Installation
 
 ```bash
-npm install lawkit
+npm install lawkit-js
 ```
 
 Includes all platform binaries (universal bundle) - no download required.
@@ -51,7 +51,7 @@ lawkit generate benf --count 1000 --output-file test-data.csv
 ### JavaScript API (Unified API)
 
 ```javascript
-const { law } = require('lawkit');
+const { law } = require('lawkit-js');
 
 // Benford's Law analysis on JavaScript array
 const numbers = [123, 187, 234, 298, 345, 456, 567, 678, 789, 1234];
@@ -156,7 +156,7 @@ interface LawkitOptions {
 ## Error Handling
 
 ```javascript
-const { law } = require('lawkit');
+const { law } = require('lawkit-js');
 
 try {
   const result = law("benford", [1, 2, 3]);
