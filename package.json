@@ -1,5 +1,5 @@
 {
-  "name": "lawkit",
+  "name": "lawkit-js",
   "version": "2.6.1",
   "description": "Node.js bindings for lawkit - statistical law analysis toolkit for fraud detection, data quality assessment, and audit compliance. Powered by Rust for blazing fast performance.",
   "keywords": [
@@ -89,11 +89,11 @@
     ]
   },
   "optionalDependencies": {
-    "lawkit-js-linux-x64-gnu": "2.5.16",
-    "lawkit-js-linux-x64-musl": "2.5.16",
-    "lawkit-js-linux-arm64-gnu": "2.5.16",
-    "lawkit-js-darwin-x64": "2.5.16",
-    "lawkit-js-darwin-arm64": "2.5.16",
-    "lawkit-js-win32-x64-msvc": "2.5.16"
+    "lawkit-js-linux-x64-gnu": "2.6.1",
+    "lawkit-js-linux-x64-musl": "2.6.1",
+    "lawkit-js-linux-arm64-gnu": "2.6.1",
+    "lawkit-js-darwin-x64": "2.6.1",
+    "lawkit-js-darwin-arm64": "2.6.1",
+    "lawkit-js-win32-x64-msvc": "2.6.1"
   }
 }
