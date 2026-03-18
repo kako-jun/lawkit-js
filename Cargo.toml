@@ -1,6 +1,6 @@
 [package]
 name = "lawkit-js"
-version = "2.6.0"
+version = "2.6.1"
 edition = "2021"
 description = "JavaScript bindings for lawkit - statistical law analysis toolkit"
 license = "MIT"
